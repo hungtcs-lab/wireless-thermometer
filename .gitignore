@@ -1,0 +1,14 @@
+*.asm
+
+*.lk
+*.lst
+*.rel
+*.rst
+*.sym
+*.map
+*.mem
+
+*.hex
+*.ihx
+
+.vscode/ipch/
