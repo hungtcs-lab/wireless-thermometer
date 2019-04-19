@@ -41,7 +41,7 @@
 #define FIFO_STATUS       0x17    // FIFO状态寄存器
 
 #define TX_ADDR_WIDTH     5
-#define TX_PAYLOAD_WIDTH  32
+#define TX_PAYLOAD_WIDTH  9
 #define RX_PAYLOAD_WIDTH  32
 
 /**

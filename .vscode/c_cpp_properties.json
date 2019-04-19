@@ -4,7 +4,7 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/usr/local/share/sdcc/include"
+                "/usr/local/share/sdcc/include/**"
             ],
             "defines": [],
             "compilerPath": "/usr/local/bin/sdcc",

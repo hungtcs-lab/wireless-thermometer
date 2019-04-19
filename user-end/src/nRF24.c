@@ -72,7 +72,7 @@ void nrf24_listen(uint8_t *address)
   nrf24_write_register_byte(W_REGISTER | EN_AA, 0x01);
   nrf24_write_register_byte(W_REGISTER | EN_RXADDR, 0x01);
   nrf24_write_register_byte(W_REGISTER | RF_CH, 0x00);
-  nrf24_write_register_byte(W_REGISTER | RX_PW_P0, TX_PAYLOAD_WIDTH);
+  nrf24_write_register_byte(W_REGISTER | RX_PW_P0, RX_PAYLOAD_WIDTH);
   nrf24_write_register_byte(W_REGISTER | RF_SETUP, 0x0F);
   nrf24_write_register_byte(W_REGISTER | CONFIG, 0x0F);
   NRF24_CE = 1;
@@ -112,3 +112,4 @@ void nrf24_read_received_data(uint8_t *rx_data)
   nrf24_read_register_byte(R_REGISTER | STATUS, &status);
   nrf24_write_register_byte(W_REGISTER | STATUS, status);
 }
+

@@ -13,23 +13,35 @@ int putchar(int c)
   return c;
 }
 
-void main()
+void io_init()
 {
-  uint8_t address[] = { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
-  uint8_t data[32] = { 0x01, 'A' };
-  DHT22MeasurementResult result;
-
   SPI_CS = 1;
   NRF24_CE = 0;
   SPI_SCK = 0;
+}
 
+void *memcpy (void *dest, const void *src, size_t len)
+{
+  char *d = dest;
+  const char *s = src;
+  while (len--)
+    *d++ = *s++;
+  return dest;
+}
+
+void main()
+{
+  uint8_t data[9];
+  uint8_t address[] = { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
+  DHT22MeasurementResult result;
+
+  io_init();
   serial_init();
 
   while(1)
   {
     dht22_measuring(&result);
-    data[1] = (uint8_t)result.temperature;
-    
+    memcpy(data, &result, sizeof(result));
     nrf24_transmit(address, data);
     delay_ms(3000);
   }

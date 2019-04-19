@@ -1,4 +1,8 @@
 {
-    "C_Cpp.errorSquiggles": "Disabled"
+    "C_Cpp.errorSquiggles": "Disabled",
+    "files.associations": {
+        "8052.h": "c",
+        "nrf24.h": "c"
+    }
 }
 

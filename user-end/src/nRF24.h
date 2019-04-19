@@ -4,7 +4,7 @@
 #include "spi.h"
 #include "config.h"
 #include <stdint.h>
-#include <mcs51/8051.h>
+#include <mcs51/8052.h>
 
 #define R_REGISTER        0x00    // 读寄存器。5位存储器映射地址
 #define W_REGISTER        0x20    // 写寄存器。5位存储器映射地址，仅可在断电或待机模式下执行
@@ -81,3 +81,4 @@ uint8_t nrf24_available(void);
 void nrf24_read_received_data(uint8_t *rx_data);
 
 #endif // __NRF24_H__
+
